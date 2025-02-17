@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.quizyfy.quizapp.Entities.Question;
 import com.quizyfy.quizapp.Entities.Quiz;
+import com.quizyfy.quizapp.Entities.WrapperQutions;
 import com.quizyfy.quizapp.services.QuizService;
 
 import java.util.List;
@@ -34,8 +35,9 @@ public class QuizController {
     }
 
     @GetMapping("get/{id}")
-    public ResponseEntity<List<Question>> getQuizQuestions(@PathVariable Integer id) {
-
+    public ResponseEntity<List<WrapperQutions>> getQuizQuestions(@PathVariable Integer id) {
+        return quizService.getQuizQuestions(id);
+        
     }
 
 }
